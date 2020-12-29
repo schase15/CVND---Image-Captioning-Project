@@ -95,13 +95,10 @@ class DecoderRNN(nn.Module):
             cur_token = word.item()
             output_list.append(cur_token)
 
-            # Current token is then the input for the next prediction
+            # Embed the current word to be used as the input for the next prediction
             inputs = self.embed(word)
 
             # Add to the count
             count += 1
 
         return output_list
-
-        
-        
